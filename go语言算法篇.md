@@ -165,4 +165,31 @@ j的使命就是要找小于基准数的数，而哨兵i的使命就是要找大
 
 一种叫做“二分”的思想。
 ```
+* Go的快速排序
+```
+func quicksort(values []int, left, right int) {
+    var i, j temp int
+    if left > right {
+        return
+    }
+    temp = values[left]
+    i = left
+    j = right
+    for i != j {
+        for i < j && values[j] >= temp {
+            j--
+        }
+        for i < j && values[i] <= temp {
+            i++
+        }
+        if i < j {
+            values[i], values[j] = values[j], values[i]
+        }
+    }
+    values[left] = values[i]
+    valeus[i] = temp
+    quicksort(values, left, i - 1)
+    quicksort(values, i + 1, right)
+}
+```
 
