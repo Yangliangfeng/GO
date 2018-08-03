@@ -54,3 +54,12 @@ func bubblesort(values []int) []int {
     return values
 }
 ```
+* 改进后的冒泡排序的时间复杂度
+```
+最好的情况是O(N)
+```
+## 快速排序法
+* 原理
+```
+
+```
