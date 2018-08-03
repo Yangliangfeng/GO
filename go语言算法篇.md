@@ -200,7 +200,9 @@ func quicksort(values []int, left, right int) {
 ```
 对于每一个字母x
 1. lastOccurred[x]不存在，或者lastOccurred[x] < start,无需操作
+
 2. lastOccurred[x] >= start,需要更新start
+
 3. 每次都要更新maxLength,更新lastOccurred[x]
 ```
 * Go代码实现
