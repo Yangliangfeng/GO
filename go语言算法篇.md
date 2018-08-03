@@ -192,4 +192,32 @@ func quicksort(values []int, left, right int) {
     quicksort(values, i + 1, right)
 }
 ```
+## 寻找最长的不含重复字符的字符串的长度
+* 算法原理
 
+![](https://github.com/Yangliangfeng/GO/raw/master/images/8.jpg)
+
+```
+对于每一个字母x
+1. lastOccurred[x]不存在，或者lastOccurred[x] < start,无需操作
+2. lastOccurred[x] >= start,需要更新start
+3. 每次都要更新maxLength,更新lastOccurred[x]
+```
+* Go代码实现
+```
+func maxLengthOfnorepeatingStrSub(s string) int {
+    lastOccurred := make(map[rune]int)
+    start := 0
+    maxLength := 0
+    for i, ch := range []rune(s) {
+        if lastId, ok := lastOccurred[ch]; ok && lastId >= start {
+            start = lastId + 1
+        }
+        if i - start + 1 > maxLength {
+            maxLength = i - start + 1
+        }
+        lastOccurred[ch] = i
+    }
+    return maxLength
+}
+```
