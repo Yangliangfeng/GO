@@ -40,5 +40,21 @@
 ![](https://github.com/Yangliangfeng/GO/raw/master/images/9.jpg)
 * 通讯流程
 ```
-1. 客户端发送HTTP请求到服务端，这个请求的header里面带了upgrade字段，告诉服务端这个请求将升级为websocket协议。服务端收到后将会给客户端一个握手的确认，switching字段表明服务端允许向websocket协议的转换。建立连接之后，客户端与服务端底层的TCP协议是没有中断的。客户端可以给服务端发送基于websocket协议的消息message,服务端也可以向客户端发送websocket协议的消息message。websocket协议发送消息的基本单位是message。
+1. 客户端发送HTTP请求到服务端，这个请求的header里面带了upgrade字段，告诉服务端这个请求将升级为websocket协议。
+
+服务端收到后将会给客户端一个握手的确认，switching字段表明服务端允许向websocket协议的转换。建立连接之后，客户端
+
+与服务端底层的TCP协议是没有中断的。客户端可以给服务端发送基于websocket协议的消息message,服务端也可以向客户端发
+
+送websocket协议的消息message。websocket协议发送消息的基本单位是message。
+```
+* 传输原理
+```
+1. 协议升级后，继续复用HTTP的底层socket完成后续的通讯
+
+2. Websocket协议发送消息的基本单位是message，但是，在底层，message被切分成多个frame帧进行传输
+
+3. 编程时只需要关心操作message,无需关心frame
+
+4. 框架底层完成TCP网络的收发，Wbesocket协议的解析，开发者无需关系
 ```
