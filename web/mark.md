@@ -7,6 +7,10 @@ go get -v github.com/gpmgo/gopm
 gopm get -g -v golang.org/x/text       //转化html编码为utf8
 gopm get -g -v golang.org/x/net/html   //自动检测输出html的编码
 ```
+* Go的Websocket包
+```
+gopm get -g -v github.com/gorilla/websocket
+```
 * Go的面向对象
 ```
 1.封装:
