@@ -58,3 +58,213 @@
 
 4. 框架底层完成TCP网络的收发，Wbesocket协议的解析，开发者无需关系
 ```
+* 实现HTTP服务端Go示例
+```
+package main
+`
+包名此处略去
+`
+function main(){
+    http.HandleFunc("/ws", wsHandler)
+    
+    http.ListenAndServe("1270.0.1:7777", nil)
+}
+func wsHandler(w http.ResponseWriter, r *http.Request){
+    w.Write([]byte("Hello World")
+}
+```
+* 完成Websocket握手
+```
+package main
+
+`
+包名此处略去
+`
+var (
+    upgrader = websocket.Upgrader{
+        CheckOrigin: func(r *http.Request) bool {
+            return true
+        },
+    }
+)
+func main(){
+    http.HandlFunc("/ws", wsHandler)
+    
+    http.ListenAndServe("127.0.0.1:7777", nil)
+}
+func wsHandler(w http.ResponseWriter, r *http.Request){
+    var (
+        wsConn *websocket.Conn
+        err error
+        data []byte
+    )
+     //Upgrader:websocket
+    if wsConn, err = upgrader.Upgrader(w, r, nil); err != nil {
+        return
+    }
+   //websocket proctol to send and receive message
+    for {
+        if _, data, err = wsConn.ReadMessage(); err != nil {
+            goto ERR
+        }
+        if err = wsConn.WriteMessage(data); err != nil {
+           goto ERR
+        }
+    }
+    ERR:
+      wsConn.Close()
+}
+```
+* 封装Websocket
+```
+package main
+
+`
+包名此处略去
+`
+var (
+    upgrader = websocket.Upgrader{
+        CheckOrigin: func(r *http.Request) bool {
+            return true
+        },
+    }
+)
+func main(){
+    http.HandlFunc("/ws", wsHandler)
+    
+    http.ListenAndServe("127.0.0.1:7777", nil)
+}
+func wsHandler(w http.ResponseWriter, r *http.Request){
+    var (
+        wsConn *websocket.Conn
+        err error
+        data []byte
+        conn *WAPI.Connection
+    )
+     //Upgrader:websocket
+    if wsConn, err = upgrader.Upgrader(w, r, nil); err != nil {
+        return
+    }
+    if conn, err = WAPI.InitConnection(); err != nil {
+        goto ERR
+    }
+    //test 
+    go func(){
+         for {
+             conn.WriteMessage([]byte("heartbeat"))
+             time.sleep(1 * time.Sencods)
+         }
+    }()
+    for {
+        if data, err = conn.ReadMessage(); err != nil {
+            goto ERR
+        }
+        if err = conn.WriteMessage(data); err != nil {
+            goto ERR
+        }
+    }
+    ERR:
+       wsConn.Close()
+   
+}
+```
+```
+//对websocket进行封装
+package WAPI
+
+`
+包名此处略去
+`
+
+type Connection struct{
+    wsConn *websocket.Conn
+    inChan chan []byte 
+    outChan chan []byte
+    closeChan chan byte
+    isClose bool
+    mutex sync.Mutex
+}
+
+func InitConnection(wsConn *websocket.conn) (conn *Connection, err error){
+    conn = &Connection {
+        wsConn: wsConn,
+        inChan: make([]byte, 1000),
+        outChan: make([]byte, 1000),
+        closeChan: make(chan byte, 1),
+    }
+    
+    go conn.readLoop()
+    go conn.writeLoop()
+    
+    return
+}
+//API for providing
+func (conn *Connection) ReadMessage() (data []byte, err error){
+    select{
+    case data = <- conn.inChan:
+    case <- conn.closeChan:
+        err = errors.New("connection already closed")
+    }
+    return
+    
+}
+func (conn *Connection) WriteMessage([]byte) (err error) {
+    select {
+        case outChan <- data:
+        case <- conn.closeChan:
+            err = errors.New("connection already closed")
+    }
+    return
+}
+func (conn *Connection) Close(){
+    conn.wsConn.Close()
+    //只允许关闭一次
+    conn.mutex.Lock()
+    if !conn.isClose {
+        close(conn.closeChan)
+        conn.isClose = true
+    }
+    conn.mutex.Unlock()
+    
+}
+//achive API func in built
+func (conn *Connection) readLoop() {
+    var (
+        data []byte
+        err error
+    )
+    for {
+        if _, data, err = conn.wsConn.ReadMessage(); err != nil {
+            goto ERR
+        }
+        select {
+            case inChan <- data:
+            case <- closeChan:
+                goto ERR
+        }
+        
+    }
+    ERR:
+      conn.Close()
+}
+func (conn *Connection) writeLoop() {
+    var (
+        data []byte
+        err error
+    )
+    for {
+        select{
+            case data = <- outChan:
+            case <- closeChan:
+                 goto ERR
+        }
+        
+        if err = conn.wsConn.WriteMessage(websocket.TextMessage, data); err != nil {
+            goto ERR
+        }
+    }
+    ERR:
+      conn.Close()
+}
+//如果当出现err，程序会跳转到ERR关闭连接，但是，比如data =  <- outChan会阻塞住不动了，所以，加一个select选择器，当有关闭closeChan信道时，程序会跳出来。
+```
