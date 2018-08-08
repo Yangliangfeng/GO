@@ -266,5 +266,6 @@ func (conn *Connection) writeLoop() {
     ERR:
       conn.Close()
 }
-//如果当出现err，程序会跳转到ERR关闭连接，但是，比如data =  <- outChan会阻塞住不动了，所以，加一个select选择器，当有关闭closeChan信道时，程序会跳出来。
+//如果当出现err，程序会跳转到ERR关闭连接，但是，比如data =  <- outChan会阻塞住不动了，所以，加一个select选择器，
+当有关闭closeChan信道时，程序会跳出来。
 ```
