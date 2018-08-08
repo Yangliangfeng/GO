@@ -30,11 +30,13 @@ func bubblesort(values []int) []int {
 * 冒泡排序的改进
 ```
 给定一个整数序列{6,1,2,3,4},每完成一次外层循环的结果为：
+
 6,1,2,3,4
 1,2,3,4,6 此时 i = 0；
 1,2,3,4,6 此时 i = 1；
 1,2,3,4,6 此时 i = 2；
 1,2,3,4,6 此时 i = 3；
+
 我们发现第一次外层循环之后就排序成功了，但是还是会继续循环下去，造成了不必要的时间复杂度
 ```
 * Go改进后的冒泡排序
@@ -221,5 +223,31 @@ func maxLengthOfnorepeatingStrSub(s string) int {
         lastOccurred[ch] = i
     }
     return maxLength
+}
+```
+## 寻找第一个不重复的字符问题
+* 算法原理
+```
+我们只要统计每个字符出现的次数，如果字符出现的次数是1次，且是第一个，就是我们要找的字符；但是，在
+
+这里需要考虑的是如果字符是中文字符，因此，我们这里将用到Go的[]rune这个类型
+```
+* Go代码实现
+```
+func main() {
+    var str string = "我是中国人我爱中国"
+    
+}
+func searchFirstNotDuplicatedChar(str string) string {
+    count := make(map[rune]int)
+    for _, v := range[]rune(str) {
+        count[v]++
+    }
+    for _, v := range[]rune(str) {
+        if count[v] == 1 {
+            return string(v)
+        }
+    }
+    return ""
 }
 ```
