@@ -11,6 +11,10 @@ gopm get -g -v golang.org/x/net/html   //自动检测输出html的编码
 ```
 gopm get -g -v github.com/gorilla/websocket
 ```
+* Go的scrypt密码加密包
+```
+gopm get -v -g golang.org/x/crypto/scrypt
+```
 * Go的面向对象
 ```
 1.封装:
