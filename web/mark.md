@@ -14,6 +14,8 @@ gopm get -g -v github.com/gorilla/websocket
 * Go的scrypt密码加密包
 ```
 gopm get -v -g golang.org/x/crypto/scrypt
+
+example: https://godoc.org/golang.org/x/crypto/scrypt
 ```
 * Go的面向对象
 ```
