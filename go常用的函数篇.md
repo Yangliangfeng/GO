@@ -46,4 +46,32 @@ strings.EqualFold("abc" , "Abc")
 
 strings.Index("NJL_abc", "abc")
 
+12. 查找字串最后一次在字符串中出现的位置，如果没有，则返回 -1
+
+strings.LastIndex("NJL_abc", "abc")
+
+13. 将目标字符串替换成指定字符串
+
+strings.Replace("go go Hello", "go", "Go语言" , n)//将"go"替换成"Go语言",n 指定替换多少个，n = -1 表示全部替换
+
+14.字符串的分割成数组
+
+strings.Split("he,woo,wdddd", ",")
+
+15. 字符串的大小写转换
+
+strings.ToUpper("go") //大写   strings.ToLower("Go") //小写
+
+16. 去掉字符串首尾的空格
+
+strings.TrimSpace(str)
+
+17. 去掉字符串首位指定的字符
+
+strings.Trim("! hello  !", " !") // 去掉首位的空白和！字符
+
+18.去掉字符串左或者右的指定字符
+
+strings.TrimLeft()     strings.TrimRight()
+
 ```
