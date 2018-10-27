@@ -74,4 +74,12 @@ strings.Trim("! hello  !", " !") // 去掉首位的空白和！字符
 
 strings.TrimLeft()     strings.TrimRight()
 
+19. 判断字符串是否以指定字符结束
+
+strings.HasSufffix("abc.jpg", ".jpg") //true
+
+20. 判断字符串是否以指定的字符开头
+
+strings.HasPrefix("ftp://www.baidu.com", "ftp:")
+
 ```
