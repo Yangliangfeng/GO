@@ -4,6 +4,10 @@
 
 len(str)
 
+   获取字符串的长度，按照rune的数量
+   
+   utf8.RuneCountInString(s)
+
 2. 字符串遍历，同时处理有中文的情况
 
 []rune(str)
