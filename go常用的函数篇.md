@@ -89,7 +89,9 @@ strings.HasPrefix("ftp://www.baidu.com", "ftp:")
  
  now := time.Now()
  
- fmt.Sprintf("%04d-%02d-%02d %02d:%02d:%02d", now.Year(), now.Month(), now.Day(), now.Hour(), now.Minute(), now.Second())
+ fmt.Sprintf("%04d-%02d-%02d %02d:%02d:%02d", now.Year(), now.Month(), now.Day(), now.Hour(), 
+ 
+ now.Minute(), now.Second())
  
  2.格式化显示当前时间(第二种方式)
  
