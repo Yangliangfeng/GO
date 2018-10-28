@@ -132,5 +132,5 @@ strings.HasPrefix("ftp://www.baidu.com", "ftp:")
  2）然后，再开辟另外一块内存空间，地址addr2,把上一块内存的地址addr1存储到addr2的空间内。
  3) 让num1指向地址addr2
  fmt.Prinf("num1的类型 num1 = %T, num1的值 num1 = %v，num1的地址 num1 = %v, num1这个指
- 针指向的值 num1 = %v", num1, num1, &num1, *num1)
+ 针指向的值 num1 = %v", num1, num1, &num1, *num1)  // 结果为: *int, addr1, addr2, 0
  ```
