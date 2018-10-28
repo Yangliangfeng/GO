@@ -134,3 +134,4 @@ strings.HasPrefix("ftp://www.baidu.com", "ftp:")
  fmt.Prinf("num1的类型 num1 = %T, num1的值 num1 = %v，num1的地址 num1 = %v, num1这个指
  针指向的值 num1 = %v", num1, num1, &num1, *num1)  // 结果为: *int, addr1, addr2, 0
  ```
+ 2. make: 用来分配内存，主要用来分配引用类型，比如channel，map，slice。
