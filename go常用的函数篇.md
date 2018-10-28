@@ -116,3 +116,9 @@ strings.HasPrefix("ftp://www.baidu.com", "ftp:")
  ```
  time.Sleep(100 * time.Millisecond)  //休眠100毫秒
  ```
+ 5. 获取当前时间戳
+ ```
+ time.Now().Unix() //当前时间戳
+ 
+ time.Now().UnixNano() 
+ ```
