@@ -93,11 +93,26 @@ strings.HasPrefix("ftp://www.baidu.com", "ftp:")
  
  now.Minute(), now.Second())
  
- 2.格式化显示当前时间(第二种方式)
+ 2. 格式化显示当前时间(第二种方式)
  
  now.Format("2006-01-02 15:04:05")  //里面的时间是固定的，据说是Go语言创建的原始时间
  
  now.Format("01") //显示当前的月份
  
  now.Format("02") //显示当前的天
+ ```
+ 3. 时间的常量
+ ```
+ const (
+     Nanosecond    //纳秒
+     Microsecond   //微秒
+     Millisecond   //毫秒
+     Second   //秒
+     Minute   //分钟
+     Hour     //小时
+ )
+ ```
+ 4. 休眠
+ ```
+ time.Sleep(100 * time.Millisecond)  //休眠100毫秒
  ```
