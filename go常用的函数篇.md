@@ -83,3 +83,19 @@ strings.HasSufffix("abc.jpg", ".jpg") //true
 strings.HasPrefix("ftp://www.baidu.com", "ftp:")
 
 ```
+### 格式化时间
+ ```
+ 1. 格式化显示当前时间(第一种方式)
+ 
+ now := time.Now()
+ 
+ fmt.Sprintf("%04d-%02d-%02d %02d:%02d:%02d", now.Year(), now.Month(), now.Day(), now.Hour(), now.Minute(), now.Second())
+ 
+ 2.格式化显示当前时间(第二种方式)
+ 
+ now.Format("2006-01-02 15:04:05")  //里面的时间是固定的，据说是Go语言创建的原始时间
+ 
+ now.Format("01") //显示当前的月份
+ 
+ now.Format("02") //显示当前的天
+ ```
