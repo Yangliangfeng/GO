@@ -139,3 +139,22 @@ strings.HasPrefix("ftp://www.baidu.com", "ftp:")
  针指向的值 num1 = %v", num1, num1, &num1, *num1)  // 结果为: *int, addr1, addr2, 0
  ```
  2. make: 用来分配内存，主要用来分配引用类型，比如channel，map，slice。
+ 
+ ###  信道作为整数自增生成器的例子
+ ```
+ func xrange() chan int {
+      ch := make(chan int)
+      go func(){
+           for i := 0; ; i++ {
+            ch <- i
+           } 
+      }()
+      return ch
+ }
+ func main() {
+      generator := xrange()
+      for i := 0; i < 1000; i++ {
+         fmt.PrintLn(<- generator)
+      }
+ }
+ ```
