@@ -63,6 +63,20 @@ gopm get -g -v github.com/go-sql-driver/mysql
    https://hub.docker.com/_/golang
    docker pull golang:1.12.7-alpine3.9
    
-2. 
+```
+* window安装gin
+```
+1. 创建文件夹
+   api.yang.com/topic ,切topic文件夹
+   go mod init topic.jtthink.com
 
+2. go get  github.com/gin-gonic/gin
+   
+3. 如果不能下载，设置如下：
+   1）window使用PowerShell设置
+      $env:GO111MODULE="on"
+      $env:GOPROXY="https://goproxy.io"
+   2）Linux
+      export GO111MODULE=on 
+      export GOPROXY=https://goproxy.io
 ```
