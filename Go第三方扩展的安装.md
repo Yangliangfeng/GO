@@ -57,3 +57,12 @@ gopm get -g -v github.com/go-sql-driver/mysql
           完整的指定路径的方式
 
 ```
+* Docker安装goland
+```
+1. docker镜像地址
+   https://hub.docker.com/_/golang
+   docker pull golang:1.12.7-alpine3.9
+   
+2. 
+
+```
