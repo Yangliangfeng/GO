@@ -80,3 +80,11 @@ gopm get -g -v github.com/go-sql-driver/mysql
       export GO111MODULE=on 
       export GOPROXY=https://goproxy.io
 ```
+* 验证器validator
+```
+1. github地址
+   https://github.com/go-playground/validator
+   
+2. 参考文档地址
+   https://godoc.org/gopkg.in/go-playground/validator.v8#hdr-Baked_In_Validators_and_Tags
+```
