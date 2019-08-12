@@ -97,3 +97,15 @@ gopm get -g -v github.com/go-sql-driver/mysql
          TopicScore int `json:"score" binding:"omitempty,gt=5"`
     }
 ```
+* gorm框架的使用
+```
+1. 安装
+   go get -u github.com/go-sql-driver/mysql //安装mysql驱动
+   go get -u github.com/jinzhu/gorm
+
+2. github地址
+   https://github.com/jinzhu/gorm
+
+3. 文档地址
+   http://gorm.io/
+```
