@@ -87,4 +87,13 @@ gopm get -g -v github.com/go-sql-driver/mysql
    
 2. 参考文档地址
    https://godoc.org/gopkg.in/go-playground/validator.v8#hdr-Baked_In_Validators_and_Tags
+   
+3. 案例
+    type Topic struct {
+         TopicID int `json:"id" `
+         TopicTitle string `json:"title" binding:"required"`
+         TopicShortTitle string `json:"stitle" binding:"required,nefield=TopicTitle"`
+         UserIP string `json:"ip" binding:"ip4_addr"`
+         TopicScore int `json:"score" binding:"omitempty,gt=5"`
+    }
 ```
