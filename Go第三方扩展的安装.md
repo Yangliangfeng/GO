@@ -72,7 +72,7 @@ gopm get -g -v github.com/go-sql-driver/mysql
 
 2. go get  github.com/gin-gonic/gin
    
-3. 如果不能下载，设置如下：
+3. 如果不能下载，设置如下：参考（http://www.hishenyi.com/archives/1420）
    1）window使用PowerShell设置
       $env:GO111MODULE="on"
       $env:GOPROXY="https://goproxy.io"
