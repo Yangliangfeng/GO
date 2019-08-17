@@ -109,3 +109,13 @@ gopm get -g -v github.com/go-sql-driver/mysql
 3. 文档地址
    http://gorm.io/
 ```
+* 解析ini配置文件的Go第三方库
+```
+go get -u  github.com/go-ini/ini
+
+```
+* go-mysql第三方库
+```
+1. 这不是一个纯mysql驱动。而是包含了mysql协议解析、复制（MySQL Replication）
+go get -u  github.com/siddontang/go-mysql
+```
