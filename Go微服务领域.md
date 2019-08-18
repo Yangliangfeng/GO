@@ -31,3 +31,11 @@
   3） Service
       这里就是我们的业务类、接口等
 ```
+* 一个第三方路由
+```
+1. github地址
+   https://github.com/gorilla/mux
+
+2. 安装
+   go get github.com/gorilla/mux
+```
