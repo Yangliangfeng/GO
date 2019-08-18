@@ -1,0 +1,33 @@
+### Go微服务之go-kit
+
+* go-kit简单入门
+```
+1. 介绍
+  https://github.com/go-kit/kit 
+  
+  go-kit是一个微服务工具包集合。利用它提供的API和规范可以创建健壮，可维护性高的微服务体系
+
+2. 参考文档
+  https://godoc.org/github.com/go-kit/kit
+  
+3. 安装
+  安装: go get github.com/go-kit/kit 
+  
+4. 微服务体系的基本需求
+  1） HTTP REST、RPC
+  2） 日志功能
+  3） 限流
+  4） API监控
+  5） 服务注册与发现
+  6） API网关
+  7） 服务链路追踪
+  8） 服务熔断
+ 
+5. Go-kit的三层架构
+  1） Transport 
+      主要负责与 HTTP、gRPC、thrift等相关的逻辑
+  2） Endpoint
+      定义Request 和Response格式，并可以使用装饰器包装函数，以此来实现各种中间件嵌套。
+  3） Service
+      这里就是我们的业务类、接口等
+```
