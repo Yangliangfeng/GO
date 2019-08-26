@@ -39,3 +39,8 @@
 2. 安装
    go get github.com/gorilla/mux
 ```
+* go内置限流包
+```
+1. 安装
+  go get golang.org/x/time/rate 
+```
