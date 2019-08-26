@@ -76,6 +76,8 @@ gopm get -g -v github.com/go-sql-driver/mysql
    1）window使用PowerShell设置
       $env:GO111MODULE="on"
       $env:GOPROXY="https://goproxy.io"
+      或
+      $env:GOPROXY="https://mirrors.aliyun.com/goproxy/"
    2）Linux
       export GO111MODULE=on 
       export GOPROXY=https://goproxy.io
