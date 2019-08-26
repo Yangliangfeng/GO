@@ -47,4 +47,10 @@
 2. 市面上比较流行的限流算法：
   1）漏桶
   2）令牌桶
+  
+3. Go令牌桶核心方法：
+  1）Wait/WaitN    
+  2）Allow/AllowN 
+  3）Reserve/ReserveN 
+
 ```
