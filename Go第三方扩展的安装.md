@@ -121,3 +121,14 @@ go get -u  github.com/go-ini/ini
 1. 这不是一个纯mysql驱动。而是包含了mysql协议解析、复制（MySQL Replication）
 go get -u  github.com/siddontang/go-mysql
 ```
+* go-jwt
+```
+1. 地址
+   https://github.com/dgrijalva/jwt-go
+
+2. 下载
+   go get -u github.com/dgrijalva/jwt-go
+   
+3. 文档地址
+   https://godoc.org/github.com/dgrijalva/jwt-go#example-New--Hmac
+```
