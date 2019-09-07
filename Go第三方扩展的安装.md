@@ -132,3 +132,11 @@ go get -u  github.com/siddontang/go-mysql
 3. 文档地址
    https://godoc.org/github.com/dgrijalva/jwt-go#example-New--Hmac
 ```
+* Json库
+```
+1. 文档
+   github.com/tidwall/gjson
+
+2. 下载
+   go get -u github.com/tidwall/gjson
+```
