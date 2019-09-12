@@ -140,3 +140,11 @@ go get -u  github.com/siddontang/go-mysql
 2. 下载
    go get -u github.com/tidwall/gjson
 ```
+* go解析ini配置文件的另一个扩展
+```
+1. github地址
+   https://github.com/go-ini/ini
+   
+2. 安装
+   go get gopkg.in/ini.v1
+```
