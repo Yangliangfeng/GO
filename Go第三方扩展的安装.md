@@ -52,6 +52,9 @@ gopm get -g -v github.com/go-sql-driver/mysql
           }
        9）编译
           protoc --go_out=. ProdService.proto
+          protoc --go_out=../services/ Prod.proto //指定编译生成的文件目录
+          
+          protoc --go_out=plugins=grpc:../services  Prod.proto
           
           protoc --plugin=protoc-gen-go=C:\Go_project\bin\protoc-gen-go.exe --go_out=. ProdService.proto
           完整的指定路径的方式
