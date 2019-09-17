@@ -68,3 +68,11 @@
   https://github.com/grpc-ecosystem/grpc-gateway
 
 ```
+### Go微服务之go-micro
+```
+1. github地址
+  https://github.com/micro/go-micro
+
+2. 安装
+  go get -u github.com/micro/go-micro
+```
