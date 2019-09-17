@@ -151,3 +151,11 @@ go get -u  github.com/siddontang/go-mysql
 2. 安装
    go get gopkg.in/ini.v1
 ```
+* 监控配置文件并重启服务器
+```
+1. git地址
+   https://github.com/jpillora/overseer
+
+2. 安装
+   go get -u github.com/jpillora/overseer
+```
