@@ -75,4 +75,8 @@
 
 2. 安装
   go get -u github.com/micro/go-micro
+
+3. 命令行注册多个服务
+  1）添加  Init()
+  2) 命令行 go run prod_main.go --server_address :8080
 ```
