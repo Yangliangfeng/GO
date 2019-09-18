@@ -166,4 +166,7 @@ go get -u  github.com/siddontang/go-mysql
 2. 替换成新的go.mod文件
 
 3. 执行 go mod download
+
+4. 当再次安装的时候go get -u xxxxx ,不要加-u这个参数
+   
 ```
