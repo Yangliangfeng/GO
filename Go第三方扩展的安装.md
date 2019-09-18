@@ -159,3 +159,11 @@ go get -u  github.com/siddontang/go-mysql
 2. 安装
    go get -u github.com/jpillora/overseer
 ```
+* 通过go.mod下载包
+```
+1. 删除出问题的go.mod和go.sum文件
+
+2. 替换成新的go.mod文件
+
+3. 执行 go mod download
+```
