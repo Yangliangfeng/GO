@@ -170,3 +170,11 @@ go get -u  github.com/siddontang/go-mysql
 4. 当再次安装的时候go get -u xxxxx ,不要加-u这个参数
    
 ```
+* grpc字段的验证
+```
+1. github地址
+   https://github.com/envoyproxy/protoc-gen-validate
+
+2. 安装
+   go get -u github.com/envoyproxy/protoc-gen-validate
+```
