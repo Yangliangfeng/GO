@@ -178,3 +178,11 @@ go get -u  github.com/siddontang/go-mysql
 2. 安装
    go get -u github.com/envoyproxy/protoc-gen-validate
 ```
+* 解决json中tag不一致的第三方插件
+```
+1. github地址
+   https://github.com/favadi/protoc-go-inject-tag
+
+2. 安装
+   go get -u github.com/favadi/protoc-go-inject-tag
+```
