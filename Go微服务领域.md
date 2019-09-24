@@ -86,4 +86,8 @@
   
   2）安装
     go get github.com/micro/go-plugins
+
+5. go-micro支持protoc第三方插件
+  1）安装
+    go get github.com/micro/protoc-gen-micro
 ```
