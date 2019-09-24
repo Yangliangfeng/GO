@@ -79,4 +79,11 @@
 3. 命令行注册多个服务
   1）添加  Init()
   2) 命令行 go run prod_main.go --server_address :8080
+  
+4. go-micro第三方插件库
+  1）github地址
+    https://github.com/micro/go-plugins
+  
+  2）安装
+    go get github.com/micro/go-plugins
 ```
