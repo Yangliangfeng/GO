@@ -56,6 +56,13 @@
   3）Reserve/ReserveN 
 
 ```
+* 第三方限流插件
+```
+1. github地址
+  https://github.com/afex/hystrix-go
+
+```
+
 ### Go微服务之grpc
 ```
 1. github地址
