@@ -90,4 +90,7 @@
 5. go-micro支持protoc第三方插件
   1）安装
     go get github.com/micro/protoc-gen-micro
+    
+6. 装饰器
+  https://github.com/micro/go-plugins/tree/master/wrapper
 ```
