@@ -100,4 +100,7 @@
     
 6. 装饰器
   https://github.com/micro/go-plugins/tree/master/wrapper
+  
+7. micro工具集
+   go get github.com/micro/micro
 ```
