@@ -101,6 +101,24 @@
 6. 装饰器
   https://github.com/micro/go-plugins/tree/master/wrapper
   
-7. micro工具集
+```
+### go-micro微服务之micro工具集
+```
+1. 项目地址
+  https://github.com/micro/
+
+2. 下载地址
    go get github.com/micro/micro
+   
+3. 命令集合
+  1） 列出所有consul中注册的服务
+    micro --registry consul(consul注册中心) --registry_address 192.168.1.88:8500  list services
+    
+  2) 查看指定注册服务的元信息
+  micro --registry consul --registry_address 192.168.1.88:8500 
+  get service test.yang.com(注册的服务名称)
+
+  3)调用服务
+   micro --registry consul --registry_address 192.168.1.88:8500 
+   call test.yang.com TestService.Call(Endpoint，通过第二步查询出来的) "{\"id\":1}" (json形式的数据，以字符串的形式输入)
 ```
