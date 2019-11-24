@@ -251,3 +251,29 @@ func searchFirstNotDuplicatedChar(str string) string {
     return ""
 }
 ```
+* Go适配器的理解
+```
+1. 引出的案例
+   type HandlerFunc func(ResponseWriter, *Request)
+   //HandlerFunc(f) is a Handler that calls f.
+
+2. 实例
+   type Me func(b int)  //可以看成是一个结构体
+   
+   func main(){
+      getMe := Me(func(b int){
+         fmt.println("my age is ",b)
+      })//通过Me强制把func(b int) {}函数转为Me类型
+      getMe(b);//初始化
+      
+      //上面两步可以等价于下面的步骤：
+      getMe := new(Me)
+      *getMe=func(b int) {
+			   fmt.Println("my age is ",b)
+		}
+      c:=Me(*getMe) //把传入的Me的参数转化为Me类型
+	   c(19)
+
+   }
+   
+```
