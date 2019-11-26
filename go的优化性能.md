@@ -26,3 +26,18 @@ Time per request:       xxx  [ms] (mean, across all concurrent requests) 并发�
 
 Transfer rate:  网络传输速度
 ```
+* 句柄数的设置
+ ```
+ 1. 查看句柄数
+    ulimit -a   查看所有的参数
+    ulimit -n   查看句柄数
+    
+ 2. 查看指定进程ID的句柄数
+    lsof -p ID  | wc -l
+ 
+ 3. 设置
+    sudo vi /etc/security/limits.conf 
+    用户名   soft nofile 100000
+    用户名   hard nofile 100000
+    * hard nofile 100000 //*表示所有的用户
+ ```
