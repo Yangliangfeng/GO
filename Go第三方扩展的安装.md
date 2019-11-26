@@ -200,3 +200,9 @@ go get -u  github.com/siddontang/go-mysql
    https://github.com/chromedp/chromedp
    go get  github.com/chromedp/chromedp
 ```
+* Go的交叉编译
+```
+set GOOS=linux
+set GOARCH=amd64
+go build -o build/gin main.go
+```
