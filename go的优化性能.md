@@ -42,3 +42,8 @@ Transfer rate:  网络传输速度
     * hard nofile 100000 //*表示所有的用户
  ```
  * ab的压测命令 ：ab -c 1500 -n 3000 -k http://139.196.x.x:8080/v1/prods?size=10 //-k 是持久连接
+ 
+ * go的压测工具
+ `
+  https://github.com/rakyll/hey
+ `
