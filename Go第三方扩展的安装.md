@@ -206,3 +206,8 @@ set GOOS=linux
 set GOARCH=amd64
 go build -o build/gin main.go
 ```
+* go的定时任务插件
+```
+1. 地址
+   https://github.com/robfig/cron
+```
