@@ -47,3 +47,13 @@ Transfer rate:  网络传输速度
  `
   https://github.com/rakyll/hey
  `
+ * 查看Linux的CPU总核数
+ ```
+ 1. 查看物理CPU个数
+    cat /proc/cpuinfo| grep "physical id"| sort| uniq| wc -l
+
+ 2. 查看每个CPU的核数
+    cat /proc/cpuinfo| grep "cpu cores"| uniq
+
+ 3. 总核数 = 上面两个相乘
+ ```
