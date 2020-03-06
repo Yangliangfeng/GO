@@ -57,3 +57,17 @@ MQ相当于一个中介，生产方通过MQ与消费方交互，它将应用程�
   5. 消费者接收消息
 
 ```
+* RabbitMQ工作模式
+```
+1. Work Queue 工作队列模式
+
+2. Publish/Subscribe 发布订阅
+
+3. Routing 路由模式
+
+4. Topics 通配符模式
+
+5. Header Header转发器
+
+6. RPC 远程过程调用
+```
