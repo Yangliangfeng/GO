@@ -21,3 +21,15 @@
    docker pull blacktop/kibana:7.4
 
 ```
+* go的elasticsearch的客户端搭建
+```
+1. 地址
+   https://github.com/olivere/elastic/
+
+2. 安装
+   go get github.com/olivere/elastic/v7
+   
+3. 启动kabana
+   docker run -d --init --name kb -e elasticsearch.hosts="139.196.228.149:9200" \
+   -p 5601:5601 kb:74
+```
