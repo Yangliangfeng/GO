@@ -60,4 +60,39 @@
      "analyzer": "standard",
       "text" : "程序教程"
    }
+   
+   
+   GET /books/_search
+   {
+     "query": {
+       "match": {
+         "BookName":"程序教程"
+       }
+     }
+     , "highlight": {//高亮显示
+         "pre_tags": ["<tag>"], 
+         "post_tags": ["</tag>"], 
+         "fields": {
+           "BookName": {}
+         }
+     }
+   }
+   
+   构建mapping时，设置分词器
+   PUT /books
+   {
+     "mappings": {
+       "properties": {
+         "BookID":    { "type": "integer" },
+         "BookName":    { "type": "text", "analyzer": "ik_max_word", "search_analyzer": "ik_smart" },  
+         "BookIntr":  { "type": "text", "analyzer": "ik_max_word", "search_analyzer": "ik_smart" }, 
+         "BookPrice1":   { "type": "float"},  
+         "BookPrice2":   { "type": "float"},  
+         "BookAuthor":   { "type": "keyword"},
+         "BookPress":   { "type": "keyword"},
+         "BookDate":   { "type": "date"},
+         "BookKind":   { "type": "integer"}
+       }
+     }
+   }
 ```
