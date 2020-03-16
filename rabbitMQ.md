@@ -109,3 +109,10 @@ MQ相当于一个中介，生产方通过MQ与消费方交互，它将应用程�
 
 4. rabbitmq采用轮询的方式将消费平均发给消费者
 ```
+* MQ重要参数的说明(go语言版本的rabbitmq为准)
+```
+1. publish发送消息
+   mandatory：此参数设置为true，在exchange正常且可到达的情况下，如果exchange+routeKey无法投递给queue
+   
+   那么MQ会将消息返还给生产者；如果为false时，则直接丢弃
+```
