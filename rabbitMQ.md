@@ -116,3 +116,17 @@ MQ相当于一个中介，生产方通过MQ与消费方交互，它将应用程�
    
    那么MQ会将消息返还给生产者；如果为false时，则直接丢弃
 ```
+* 延迟交换机插件
+```
+1. 下载地址
+  https://github.com/rabbitmq/rabbitmq-delayed-message-exchange
+
+2. 拷贝到容器中
+   docker cp rabbitmq_delayed_message_exchange-3.8.0.ez rmq:/opt/rabbitmq/plugins
+   
+3. 启用插件
+  rabbitmq-plugins enable rabbitmq_delayed_message_exchange
+
+4. 查看启用的插件
+  rabbitmq-plugins list
+```
