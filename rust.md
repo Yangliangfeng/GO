@@ -47,4 +47,7 @@
   rustc -V
   cargo -V
   rustup -V
+  
+2. 安装rust的源码库
+   rustup component  add rust-src
 ```
