@@ -40,6 +40,9 @@
       x86_64-pc-windows-gnu
   
     8）其他默认，在是否修改path环境变量时，选择：no
+    
+    9）卸载已经安装的rust
+      rustup self uninstall
 ```
 * 基本命令的使用
 ```
