@@ -62,3 +62,20 @@
    String::new()
    String::from
 ```
+3. RUST常见符号
+```
+unspecified -> Display
+
+? -> Debug
+
+o -> Octal //8进制
+
+x -> LowerHex  //16进制
+
+X -> UpperHex
+
+p -> Pointer
+
+b -> Binary //二进制
+
+```
