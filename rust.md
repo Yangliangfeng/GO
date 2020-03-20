@@ -54,3 +54,11 @@
 2. 安装rust的源码库
    rustup component  add rust-src
 ```
+* String的入门
+```
+1. str ，存在于栈中，性能高。通常以&str的方式引用。
+
+2. String,分配在堆中,可增长、可变、有所有权、UTF-8 编码的字符串类型
+   String::new()
+   String::from
+```
