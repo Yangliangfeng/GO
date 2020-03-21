@@ -53,6 +53,11 @@
   
 2. 安装rust的源码库
    rustup component  add rust-src
+
+3. 新建项目
+   cargo new mypros
+4. 编译并运行文件
+   cargo build && cargo run
 ```
 * String的入门
 ```
