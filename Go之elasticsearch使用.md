@@ -96,3 +96,66 @@
      }
    }
 ```
+* ES的基本指令
+```
+1. 查看ES中所有的索引
+   GET /_cat/indices
+   
+```
+* ES数据迁移（要修改mapping中的属性，且数据量比较大，例如几百万）
+```
+1. 新建索引
+   PUT /bookslogs_2
+   {
+     "mappings": {
+       "properties": {
+         "ip":    { "type": "text" },
+         "status":    { "type": "integer"},  
+         "duration":   { "type": "integer"},  
+         "method":   { "type": "keyword"},  
+         "url":   { 
+           "type": "text",
+           "fields": {
+             "keyword":{
+               "type":"keyword"
+             }
+           }
+
+         },
+         "time":   { "type": "date","format": "strict_date_optional_time||epoch_millis||dd/MMM/yyyy:HH:mm:ss Z"
+         },
+         "level":   { "type": "keyword"},
+         "msg":  { "type": "text"},
+         "referer":  { "type": "text"},
+         "agent": { "type": "text"}
+       }
+     }
+   }
+   
+2. 迁移数据
+   POST _reindex
+   {
+     "source": {
+       "index": "bookslogs"
+     },
+     "dest": { //迁移到目标索引
+       "index": "bookslogs_2"
+     }
+   }
+ 
+ 3. 设置别名
+   删除原索引
+   
+   设置别名
+   POST _aliases
+   {
+     "actions": [
+       {
+         "add": {
+           "index": "bookslogs_2",
+           "alias": "bookslogs"
+         }
+       }
+     ]
+   }
+```
