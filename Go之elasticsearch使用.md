@@ -159,3 +159,20 @@
      ]
    }
 ```
+* 通配符查询
+```
+1. 查询语法
+   GET /bookslogs/_search
+   {
+     "query": {
+       "wildcard": {//表示通配符查询
+         "url.keyword": {//用keyword（不会分词）查询，如果用fulltext全文检索，会分词
+           "value": "/static*" //以static开头
+         }
+       }
+     }
+   }
+   
+ 2. ？：匹配任意字符
+    * ：匹配0个或者多个字符
+```
