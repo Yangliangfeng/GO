@@ -8,3 +8,7 @@
 
 3. byte 和 rune 都是字符类型，若多个字符放在一起，就组成了字符串，也就是这里要说的 string 类型
 ```
+* Go语言中默认是指针的类型
+```
+map，channel，interface，slice，func
+```
