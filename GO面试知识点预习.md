@@ -18,7 +18,14 @@
 
 8. 502，网关超时，比如可能php-fpm挂了，无法与nginx进行连接；可能是backlog队列
 ```
+* new和make之间的区别
+```
+1. 指针：带类型的
 
+2. new： 用来初始化值类型指针的（var a *int）
+
+3. make：用来初始化slice,map,channel等引用类型的
+```
 * Go语言中byte、rune与字符串区别
 ```
 1. byte，占用1个节字,所以它和 uint8 类型本质上没有区别，它表示的是 ACSII 表中的一个字符
