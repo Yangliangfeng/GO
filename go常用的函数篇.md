@@ -158,3 +158,34 @@ strings.HasPrefix("ftp://www.baidu.com", "ftp:")
       }
  }
  ```
+ ### 时间戳与日期的相互转化
+ ```
+ func TimestampToDate(timestamp int64, formats ...string) string {
+	   //默认格式是2006-01-02 15:04:05
+	   format := ""
+      if len(formats) == 0 || len(formats) == 1 && formats[0] == "" {
+         format = "2006-01-02 15:04:05"
+      }else{
+         format = formats[0]
+      }
+	   return time.Unix(timestamp, 0).Format(format)
+  }
+  
+  func DateToTimestamp(date string,formats ...string) (int64,error) {
+	      format := ""
+      if len(formats) == 0 || len(formats) == 1 && formats[0] == "" {
+         format = "2006-01-02 15:04:05"
+      }else{
+         format = formats[0]
+      }
+      loc , err := time.LoadLocation("Local")
+      if err != nil {
+         return 0, err
+      }
+      t, err := time.ParseInLocation(format, date, loc)
+      if err != nil {
+         return 0, err
+	   }
+	   return t.Unix(),nil
+   }
+ ```
