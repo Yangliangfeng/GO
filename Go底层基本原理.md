@@ -5,3 +5,5 @@
 基本原理如下图所示：
 
 ![](https://github.com/Yangliangfeng/GO/raw/master/images/2-color-clean.png)
+
+![](https://github.com/Yangliangfeng/GO/raw/master/images/clean_step1.png)
