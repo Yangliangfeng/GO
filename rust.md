@@ -86,6 +86,18 @@ p -> Pointer
 b -> Binary //二进制
 
 ```
+* String类型在堆栈中的存储
+
+![](https://github.com/Yangliangfeng/GO/raw/master/images/String_struct.png)
+
+```
+String 类型在栈中存放的是：ptr指针地址，len长度，capacity容量
+
+在堆中存放的是内容
+
+rust查看指针的地址：println!("{:p}", name.as_ptr())
+
+```
 * rust的内存回收机制
 ```
 1. rust是通过所有权机制来管理内存，编译器在编译会根据所有权规则来对内存的使用进行检查
